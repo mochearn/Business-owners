@@ -226,6 +226,63 @@
                 font-size: 16px;
             }
         }
+        /* Slider/Carousel */
+.slider-container {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+}
+.slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 600 / 400;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.slide.active {
+    opacity: 1;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 5;
+}
+.dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.dot.active {
+    width: 24px;
+    border-radius: 4px;
+    background: #ea580c;
+        }
+        /* Prevent body scroll when menu open */
+body.menu-open {
+    overflow: hidden;
+        }
     </style>
 </head>
 <body>
@@ -265,8 +322,25 @@
                 <a href="#" class="btn-secondary">Contact Me</a>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="https://placehold.co/600x400/f3f4f6/ea580c?text=Your+Website+Design" alt="Web design preview">
+      <div class="hero-image">
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&h=400&fit=crop" alt="Modern website design">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=600&h=400&fit=crop" alt="E-commerce website">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop" alt="Mobile friendly design">
+            </div>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
         </div>
     </section>
 
@@ -281,9 +355,11 @@
     const overlay = document.getElementById('overlay');
 
     function toggleMenu() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    // Toggle body scroll
+    document.body.classList.toggle('menu-open');
     }
 
     hamburger.addEventListener('click', toggleMenu);
@@ -293,6 +369,52 @@
     menuLinks.forEach(link => {
         link.addEventListener('click', toggleMenu);
     });
+
+    // Image Slider
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let currentSlide = 0;
+let slideInterval;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+    currentSlide = index;
+}
+
+function nextSlide() {
+    let newIndex = currentSlide + 1;
+    if (newIndex >= slides.length) newIndex = 0;
+    showSlide(newIndex);
+}
+
+function startAutoSlide() {
+    slideInterval = setInterval(nextSlide, 3000);
+}
+
+function stopAutoSlide() {
+    clearInterval(slideInterval);
+}
+
+// Dot click handlers
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        stopAutoSlide();
+        showSlide(index);
+        startAutoSlide();
+    });
+});
+
+// Touch/pause on hover (for desktop, but fine on mobile)
+const sliderContainer = document.querySelector('.slider-container');
+sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+startAutoSlide();
 </script>
 </body>
         </html>
