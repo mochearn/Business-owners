@@ -26,38 +26,54 @@
             padding: 0 20px;
         }
 
-        /* Navbar */
+        /* Sticky Navbar */
         .navbar {
+            position: sticky;
+            top: 0;
+            background: #f9fafb;
+            z-index: 1002;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
-            position: relative;
+            padding: 16px 0;
         }
         .logo {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
             color: #ea580c;
             letter-spacing: -0.5px;
         }
-        /* Hamburger icon */
+        /* Sleeker Hamburger */
         .hamburger {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: 30px;
-            height: 21px;
+            width: 24px;
+            height: 18px;
             cursor: pointer;
-            z-index: 1001;
+            z-index: 1003;
+            position: relative;
         }
         .hamburger span {
             display: block;
-            height: 3px;
+            height: 2px;
             background: #1f2937;
-            border-radius: 3px;
-            transition: all 0.3s ease;
+            border-radius: 2px;
+            transition: all 0.25s ease;
         }
-        /* Mobile menu (hidden by default) */
+        /* Hamburger to X animation */
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Mobile Menu */
         .nav-menu {
             position: fixed;
             top: 0;
@@ -67,8 +83,8 @@
             height: 100vh;
             background: white;
             box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 80px 30px;
+            z-index: 1001;
+            padding: 80px 24px;
             transition: right 0.3s ease;
         }
         .nav-menu.active {
@@ -78,16 +94,31 @@
             list-style: none;
         }
         .nav-menu li {
-            margin: 25px 0;
+            margin: 20px 0;
         }
         .nav-menu a {
             text-decoration: none;
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 500;
             color: #1f2937;
-            transition: none; /* no hover effect */
+            display: block;
+            padding: 8px 16px;
+            margin: -8px -16px;
+            border-radius: 12px;
+            transition: none; /* no transition for hover */
         }
-        /* Overlay when menu is open */
+        /* Menu link hover effect (grey, round) */
+        .nav-menu a:hover {
+            background: #e5e7eb;
+            border-radius: 12px;
+        }
+        /* Touch feedback for menu links */
+        .nav-menu a:active {
+            background: #d1d5db;
+            transform: scale(0.98);
+        }
+
+        /* Overlay */
         .overlay {
             position: fixed;
             top: 0;
@@ -95,7 +126,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.3);
-            z-index: 999;
+            z-index: 1000;
             display: none;
         }
         .overlay.active {
@@ -131,6 +162,7 @@
         }
         .hero-image img {
             max-width: 100%;
+            height: auto;
             border-radius: 24px;
             box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
         }
@@ -148,7 +180,7 @@
             font-weight: 600;
             text-decoration: none;
             cursor: pointer;
-            transition: none; /* no hover transition */
+            transition: none;
         }
         .btn-primary {
             background: #ea580c;
@@ -160,19 +192,13 @@
             color: #ea580c;
             border: 1px solid #ea580c;
         }
-        /* Touch feedback (tap animation) */
+        /* Touch feedback only (no hover) */
         .btn-primary:active, .btn-secondary:active {
             transform: scale(0.97);
             transition: transform 0.05s ease;
         }
-        .hamburger:active span {
-            background: #ea580c;
-        }
-        .nav-menu a:active {
-            color: #ea580c;
-        }
 
-        /* Footer placeholder */
+        /* Footer */
         footer {
             text-align: center;
             padding: 40px 0;
@@ -180,12 +206,22 @@
             border-top: 1px solid #e5e7eb;
             color: #6b7280;
         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            .hero-content p {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Navbar -->
+    <!-- Sticky Navbar -->
     <div class="navbar">
         <div class="logo">JonardT£ch</div>
         <div class="hamburger" id="hamburger">
@@ -220,8 +256,8 @@
             </div>
         </div>
         <div class="hero-image">
-            <!-- Placeholder image (replace with your own later) -->
-            <img src="https://placehold.co/600x400/f3f4f6/ea580c?text=Web+Design+Preview" alt="Web design preview">
+            <!-- Replace this image URL with your own photo -->
+            <img src="https://placehold.co/600x400/f3f4f6/ea580c?text=Your+Website+Design" alt="Web design preview">
         </div>
     </section>
 
@@ -231,12 +267,12 @@
 </div>
 
 <script>
-    // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
     const overlay = document.getElementById('overlay');
 
     function toggleMenu() {
+        hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
         overlay.classList.toggle('active');
     }
