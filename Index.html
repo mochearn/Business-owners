@@ -5,26 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>JonardTech | Web Design for Local Business</title>
     <style>
-        /* Ensure content doesn't jump */
-.sticky-header + .container {
-    transition: margin-top 0.3s ease;
-        }
-        .sticky-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #f9fafb;
-    z-index: 1002;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-    transform: translateY(0);
-}
-.sticky-header.hide {
-    transform: translateY(-100%);
-}
-/* Add top padding to body so content doesn't hide under fixed header */
-body * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -43,14 +24,20 @@ body * {
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* Sticky Header - Full Width */
+        /* Sticky Header - Fixed at top, hides/shows on scroll */
         .sticky-header {
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             background: #f9fafb;
             z-index: 1002;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            width: 100%;
+            transition: transform 0.3s ease;
+            transform: translateY(0);
+        }
+        .sticky-header.hide {
+            transform: translateY(-100%);
         }
         .navbar-inner {
             max-width: 1200px;
@@ -66,6 +53,13 @@ body * {
             color: #ea580c;
             letter-spacing: -0.5px;
         }
+        /* Spacer to push content below fixed header */
+        .header-spacer {
+            height: 70px;
+            width: 100%;
+            display: block;
+        }
+
         /* Sleeker Hamburger */
         .hamburger {
             display: flex;
@@ -155,6 +149,11 @@ body * {
             display: block;
         }
 
+        /* Prevent body scroll when menu open */
+        body.menu-open {
+            overflow: hidden;
+        }
+
         /* Container for content */
         .container {
             max-width: 1200px;
@@ -185,18 +184,63 @@ body * {
             color: #4b5563;
             margin-bottom: 30px;
         }
-   .hero-image {
-    flex: 2;  /* was 1, now twice as wide as hero-content */
-    text-align: center;
-}
-.hero-content {
-    flex: 1;
-}
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Slider/Carousel */
+        .slider-container {
+            position: relative;
+            width: 100%;
             border-radius: 24px;
+            overflow: hidden;
             box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 600 / 400;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slider-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 5;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .dot.active {
+            width: 24px;
+            border-radius: 4px;
+            background: #ea580c;
         }
 
         /* Buttons */
@@ -248,68 +292,6 @@ body * {
                 font-size: 16px;
             }
         }
-        /* Slider/Carousel */
-.slider-container {
-    position: relative;
-    width: 100%;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
-}
-.slider {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 600 / 400;
-}
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-.slide.active {
-    opacity: 1;
-}
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.slider-dots {
-    position: absolute;
-    bottom: 12px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    z-index: 5;
-}
-.dot {
-    width: 8px;
-    height: 8px;
-    background: rgba(255,255,255,0.6);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-.dot.active {
-    width: 24px;
-    border-radius: 4px;
-    background: #ea580c;
-        }
-        /* Prevent body scroll when menu open */
-body.menu-open {
-    overflow: hidden;
-        }
-        .header-spacer {
-    height: 70px; /* same as header height */
-    width: 100%;
-    display: block;
-        }
     </style>
 </head>
 <body>
@@ -322,10 +304,12 @@ body.menu-open {
             <span></span>
             <span></span>
             <span></span>
-            <div class="header-spacer"></div>
         </div>
     </div>
 </div>
+
+<!-- Spacer to push content down -->
+<div class="header-spacer"></div>
 
 <!-- Mobile Menu -->
 <div class="nav-menu" id="navMenu">
@@ -350,25 +334,25 @@ body.menu-open {
                 <a href="#" class="btn-secondary">Contact Me</a>
             </div>
         </div>
-      <div class="hero-image">
-    <div class="slider-container">
-        <div class="slider">
-            <div class="slide active">
-                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&h=400&fit=crop" alt="Modern website design">
+        <div class="hero-image">
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide active">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&h=400&fit=crop" alt="Modern website design">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=600&h=400&fit=crop" alt="E-commerce website">
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop" alt="Mobile friendly design">
+                    </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
             </div>
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=600&h=400&fit=crop" alt="E-commerce website">
-            </div>
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop" alt="Mobile friendly design">
-            </div>
-        </div>
-        <div class="slider-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
         </div>
     </section>
 
@@ -378,86 +362,89 @@ body.menu-open {
 </div>
 
 <script>
+    // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
     const overlay = document.getElementById('overlay');
 
     function toggleMenu() {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    overlay.classList.toggle('active');
-    // Toggle body scroll
-    document.body.classList.toggle('menu-open');
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        // Prevent body scroll when menu open
+        document.body.classList.toggle('menu-open');
     }
 
     hamburger.addEventListener('click', toggleMenu);
     overlay.addEventListener('click', toggleMenu);
 
+    // Close menu when a link is clicked
     const menuLinks = document.querySelectorAll('.nav-menu a');
     menuLinks.forEach(link => {
         link.addEventListener('click', toggleMenu);
     });
 
-    // Image Slider
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-let currentSlide = 0;
-let slideInterval;
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-    });
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-    });
-    currentSlide = index;
-}
-
-function nextSlide() {
-    let newIndex = currentSlide + 1;
-    if (newIndex >= slides.length) newIndex = 0;
-    showSlide(newIndex);
-}
-
-function startAutoSlide() {
-    slideInterval = setInterval(nextSlide, 3000);
-}
-
-function stopAutoSlide() {
-    clearInterval(slideInterval);
-}
-
-// Dot click handlers
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        stopAutoSlide();
-        showSlide(index);
-        startAutoSlide();
-    });
-});
-
-// Touch/pause on hover (for desktop, but fine on mobile)
-const sliderContainer = document.querySelector('.slider-container');
-sliderContainer.addEventListener('mouseenter', stopAutoSlide);
-sliderContainer.addEventListener('mouseleave', startAutoSlide);
-
-startAutoSlide();
     // Hide header on scroll down, show on scroll up
-let lastScrollY = window.scrollY;
-const header = document.querySelector('.sticky-header');
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector('.sticky-header');
 
-window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling down & past 50px – hide header
-        header.classList.add('hide');
-    } else if (currentScrollY < lastScrollY) {
-        // Scrolling up – show header
-        header.classList.remove('hide');
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > lastScrollY && currentScrollY > 50) {
+            // Scrolling down & past 50px – hide header
+            header.classList.add('hide');
+        } else if (currentScrollY < lastScrollY) {
+            // Scrolling up – show header
+            header.classList.remove('hide');
+        }
+        lastScrollY = currentScrollY;
+    });
+
+    // Image Slider
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        currentSlide = index;
     }
-    lastScrollY = currentScrollY;
-});
+
+    function nextSlide() {
+        let newIndex = currentSlide + 1;
+        if (newIndex >= slides.length) newIndex = 0;
+        showSlide(newIndex);
+    }
+
+    function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, 3000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(slideInterval);
+    }
+
+    // Dot click handlers
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopAutoSlide();
+            showSlide(index);
+            startAutoSlide();
+        });
+    });
+
+    // Pause auto-slide on touch/hover
+    const sliderContainer = document.querySelector('.slider-container');
+    sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+    sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+    startAutoSlide();
 </script>
 </body>
-        </html>
+    </html>
