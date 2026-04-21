@@ -24,10 +24,7 @@
     transform: translateY(-100%);
 }
 /* Add top padding to body so content doesn't hide under fixed header */
-body {
-    padding-top: 70px; /* adjust based on your header height */
-            }
-        * {
+body * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -308,6 +305,11 @@ body {
 body.menu-open {
     overflow: hidden;
         }
+        .header-spacer {
+    height: 70px; /* same as header height */
+    width: 100%;
+    display: block;
+        }
     </style>
 </head>
 <body>
@@ -320,6 +322,7 @@ body.menu-open {
             <span></span>
             <span></span>
             <span></span>
+            <div class="header-spacer"></div>
         </div>
     </div>
 </div>
