@@ -19,24 +19,27 @@
             overflow-x: hidden;
         }
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* Remove blue tap highlight on all interactive elements */
+        button, a, .hamburger, .nav-menu a, .btn-primary, .btn-secondary {
+            -webkit-tap-highlight-color: transparent;
         }
 
-        /* Sticky Navbar */
-        .navbar {
+        /* Sticky Header - Full Width */
+        .sticky-header {
             position: sticky;
             top: 0;
             background: #f9fafb;
             z-index: 1002;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0;
         }
         .logo {
             font-size: 26px;
@@ -105,7 +108,7 @@
             padding: 8px 16px;
             margin: -8px -16px;
             border-radius: 12px;
-            transition: none; /* no transition for hover */
+            transition: none;
         }
         /* Menu link hover effect (grey, round) */
         .nav-menu a:hover {
@@ -131,6 +134,13 @@
         }
         .overlay.active {
             display: block;
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         /* Hero Section */
@@ -220,9 +230,9 @@
 </head>
 <body>
 
-<div class="container">
-    <!-- Sticky Navbar -->
-    <div class="navbar">
+<!-- Sticky Header - Full Width -->
+<div class="sticky-header">
+    <div class="navbar-inner">
         <div class="logo">JonardT£ch</div>
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -244,8 +254,8 @@
 </div>
 <div class="overlay" id="overlay"></div>
 
+<!-- Main Content -->
 <div class="container">
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Professional Websites <br>For Local Businesses</h1>
@@ -256,7 +266,6 @@
             </div>
         </div>
         <div class="hero-image">
-            <!-- Replace this image URL with your own photo -->
             <img src="https://placehold.co/600x400/f3f4f6/ea580c?text=Your+Website+Design" alt="Web design preview">
         </div>
     </section>
@@ -280,11 +289,10 @@
     hamburger.addEventListener('click', toggleMenu);
     overlay.addEventListener('click', toggleMenu);
 
-    // Close menu when a link is clicked
     const menuLinks = document.querySelectorAll('.nav-menu a');
     menuLinks.forEach(link => {
         link.addEventListener('click', toggleMenu);
     });
 </script>
 </body>
-    </html>
+        </html>
