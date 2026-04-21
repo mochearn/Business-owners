@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>JonardTech | Web Design for Local Business</title>
     <style>
+        /* Ensure content doesn't jump */
+.sticky-header + .container {
+    transition: margin-top 0.3s ease;
+        }
+        .sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f9fafb;
+    z-index: 1002;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+}
+.sticky-header.hide {
+    transform: translateY(-100%);
+}
+/* Add top padding to body so content doesn't hide under fixed header */
+body {
+    padding-top: 70px; /* adjust based on your header height */
+            }
         * {
             margin: 0;
             padding: 0;
@@ -418,6 +440,21 @@ sliderContainer.addEventListener('mouseenter', stopAutoSlide);
 sliderContainer.addEventListener('mouseleave', startAutoSlide);
 
 startAutoSlide();
+    // Hide header on scroll down, show on scroll up
+let lastScrollY = window.scrollY;
+const header = document.querySelector('.sticky-header');
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Scrolling down & past 50px – hide header
+        header.classList.add('hide');
+    } else if (currentScrollY < lastScrollY) {
+        // Scrolling up – show header
+        header.classList.remove('hide');
+    }
+    lastScrollY = currentScrollY;
+});
 </script>
 </body>
         </html>
