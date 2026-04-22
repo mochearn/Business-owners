@@ -1000,17 +1000,22 @@ body {
     padding: 0;
 }
 .pricing-final {
-    padding: 80px 20px;
-    background: #fff0e6;
-    margin: 0;
     width: 100%;
+    margin: 0;
+    padding: 80px 0; /* vertical padding only, no horizontal padding on the section itself */
+    background: #fff0e6;
     font-family: 'Figtree', sans-serif;
     box-sizing: border-box;
 }
-.pricing-final-grid, .pricing-final-title, .pricing-final-subtitle, .pricing-final-button-wrapper {
+/* Keep the inner content centered and with side padding */
+.pricing-final .pricing-final-grid,
+.pricing-final .pricing-final-title,
+.pricing-final .pricing-final-subtitle,
+.pricing-final .pricing-final-button-wrapper {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 20px; /* add horizontal padding to the content only */
 }
 .pricing-final-title, .pricing-final-subtitle {
     text-align: center;
