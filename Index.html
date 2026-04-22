@@ -274,16 +274,7 @@
             transition: transform 0.05s ease;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 60px;
-            border-top: 1px solid #e5e7eb;
-            color: #6b7280;
-        }
-
-        /* Responsive */
+ /* Responsive */
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 32px;
@@ -355,11 +346,6 @@
             </div>
         </div>
     </section>
-
-    <footer>
-        <p>© 2025 JonardT£ch – Websites that work for you</p>
-    </footer>
-</div>
 
 <script>
     // Hamburger menu toggle
@@ -446,5 +432,343 @@
 
     startAutoSlide();
 </script>
+
+    <!-- ========== SERVICES SECTION (fast blink: 0.3s, pause 6s) ========== -->
+<!-- Google Font (add inside <head> if not already) -->
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- HTML: paste this where you want the Services section -->
+<section class="services">
+    <!-- Animated shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+
+    <div class="services-content">
+        <h2 class="section-title">What I Offer</h2>
+        <p class="section-tagline">Websites that work as hard as you do.</p>
+        <div class="services-grid">
+            <div class="service-card" data-animation="fadeUp">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                </div>
+                <h3>Business Websites</h3>
+                <p>Professional, mobile-friendly sites that build trust and attract customers.</p>
+                <ul class="feature-list">
+                    <li>✓ SEO ready</li>
+                    <li>✓ Mobile friendly</li>
+                    <li>✓ Contact form</li>
+                </ul>
+            </div>
+            <div class="service-card" data-animation="slideLeft">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="1" y="4" width="22" height="16" rx="2"/>
+                        <circle cx="9" cy="12" r="2"/>
+                        <circle cx="15" cy="12" r="2"/>
+                        <path d="M5 8h2M17 8h2"/>
+                    </svg>
+                </div>
+                <h3>E‑commerce Stores</h3>
+                <p>Sell products online with a simple, secure store.</p>
+                <ul class="feature-list">
+                    <li>✓ Product catalog</li>
+                    <li>✓ Secure checkout</li>
+                    <li>✓ Payment links</li>
+                </ul>
+            </div>
+            <div class="service-card" data-animation="slideRight">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9h-4m-7 9A9 9 0 0 1 3 12m9 9v-4M3 12a9 9 0 0 1 9-9m-9 9h4m7-9a9 9 0 0 1 9 9"/>
+                    </svg>
+                </div>
+                <h3>SEO Optimization</h3>
+                <p>Get found on Google with basic SEO setup.</p>
+                <ul class="feature-list">
+                    <li>✓ Meta tags</li>
+                    <li>✓ Keyword ready</li>
+                    <li>✓ Google Maps</li>
+                </ul>
+            </div>
+            <div class="service-card" data-animation="fadeUp">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                    </svg>
+                </div>
+                <h3>Fast Support</h3>
+                <p>Ongoing maintenance and updates to keep your site fresh.</p>
+                <ul class="feature-list">
+                    <li>✓ 24/7 support</li>
+                    <li>✓ Free updates (1 month)</li>
+                    <li>✓ Backup included</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Trust indicator & CTA -->
+        <div class="trust-badge">
+            <span class="trust-text">⭐ Trusted by 15+ local businesses</span>
+        </div>
+        <div class="section-cta">
+            <a href="#" class="cta-button pulse">Start Your Project →</a>
+        </div>
+    </div>
+</section>
+
+<style>
+.services {
+    position: relative;
+    padding: 80px 0;
+    background: #fefaf5;
+    margin: 40px 0;
+    border-radius: 48px;
+    font-family: 'Figtree', sans-serif;
+    overflow: hidden;
+    min-height: 600px;
+}
+
+.shape {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.45;
+    filter: blur(60px);
+}
+.shape-1 {
+    width: 280px;
+    height: 280px;
+    background: #ea580c;
+    border-radius: 50%;
+    animation: wander1 22s infinite alternate ease-in-out;
+}
+.shape-2 {
+    width: 240px;
+    height: 240px;
+    background: #d97706;
+    border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
+    animation: wander2 26s infinite alternate ease-in-out;
+}
+.shape-3 {
+    width: 260px;
+    height: 260px;
+    background: #b45309;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: wander3 30s infinite alternate ease-in-out;
+}
+
+@keyframes wander1 {
+    0% { left: -10%; top: -10%; }
+    20% { left: 60%; top: 10%; }
+    40% { left: 30%; top: 70%; }
+    60% { left: 85%; top: 40%; }
+    80% { left: 10%; top: 85%; }
+    100% { left: -5%; top: 90%; }
+}
+@keyframes wander2 {
+    0% { left: 70%; top: -15%; }
+    25% { left: 5%; top: 50%; }
+    50% { left: 65%; top: 85%; }
+    75% { left: 15%; top: 20%; }
+    100% { left: 90%; top: 60%; }
+}
+@keyframes wander3 {
+    0% { left: 20%; top: 80%; }
+    25% { left: 75%; top: 5%; }
+    50% { left: 10%; top: 30%; }
+    75% { left: 80%; top: 75%; }
+    100% { left: 45%; top: -10%; }
+}
+
+.services-content {
+    position: relative;
+    z-index: 2;
+}
+.section-title {
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+    color: #111827;
+}
+.section-tagline {
+    text-align: center;
+    font-size: 18px;
+    color: #ea580c;
+    font-weight: 500;
+    margin-bottom: 48px;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+.service-card {
+    background: #ffffff;
+    padding: 32px 24px;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12), 0 4px 8px -4px rgba(0, 0, 0, 0.02);
+    transition: none;
+    opacity: 0;
+    transform: translateY(30px);
+    will-change: transform, opacity;
+    position: relative;
+    z-index: 2;
+}
+.service-card[data-animation="fadeUp"] {
+    transform: translateY(30px);
+}
+.service-card[data-animation="slideLeft"] {
+    transform: translateX(-40px);
+}
+.service-card[data-animation="slideRight"] {
+    transform: translateX(40px);
+}
+.service-card.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), opacity 0.6s ease;
+}
+.service-card:active {
+    transform: scale(0.98);
+    transition: transform 0.05s ease;
+}
+.service-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    color: #ea580c;
+}
+.service-icon svg {
+    width: 100%;
+    height: 100%;
+}
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #ea580c;
+}
+.service-card p {
+    color: #4b5563;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+.feature-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    font-size: 14px;
+    color: #4b5563;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 16px;
+    margin-top: 8px;
+}
+.feature-list li {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.trust-badge {
+    text-align: center;
+    margin: 48px 0 24px;
+}
+.trust-text {
+    background: #ffffffcc;
+    backdrop-filter: blur(4px);
+    padding: 8px 20px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ea580c;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.section-cta {
+    text-align: center;
+    margin-top: 20px;
+}
+.cta-button {
+    display: inline-block;
+    background: #ea580c;
+    color: white;
+    padding: 14px 36px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: none;
+    box-shadow: 0 4px 12px rgba(234,88,12,0.3);
+}
+/* Fast blink: 0.3s total blink, 6s pause (total 6.3s cycle) */
+@keyframes fastBlink {
+    0%, 95% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    97% {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    99% {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.cta-button.pulse {
+    animation: fastBlink 6.3s ease-in-out infinite;
+}
+.cta-button:active {
+    transform: scale(0.97);
+    transition: transform 0.05s ease;
+}
+@media (max-width: 768px) {
+    .services {
+        padding: 60px 0;
+        margin: 20px 0;
+        border-radius: 32px;
+        min-height: 500px;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+    .section-tagline {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+    .shape-1, .shape-2, .shape-3 {
+        filter: blur(40px);
+        opacity: 0.35;
+        width: 180px;
+        height: 180px;
+    }
+}
+</style>
+
+<script>
+// Intersection Observer for scroll animations
+const serviceCards = document.querySelectorAll('.service-card');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible');
+        }
+    });
+}, { threshold: 0.2 });
+serviceCards.forEach(card => {
+    observer.observe(card);
+});
+                                           </script>
 </body>
     </html>
