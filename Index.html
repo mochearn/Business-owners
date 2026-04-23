@@ -1001,22 +1001,22 @@ body {
 }
 .pricing-final {
     width: 100%;
+    max-width: 100%;
     margin: 0;
-    padding: 80px 0; /* vertical padding only, no horizontal padding on the section itself */
+    padding: 80px 0;
     background: #fff0e6;
-    font-family: 'Figtree', sans-serif;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
-/* Keep the inner content centered and with side padding */
+/* Ensure the container that holds the cards and text is centered */
 .pricing-final .pricing-final-grid,
 .pricing-final .pricing-final-title,
 .pricing-final .pricing-final-subtitle,
 .pricing-final .pricing-final-button-wrapper {
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px; /* add horizontal padding to the content only */
-}
+    margin: 0 auto;
+    padding: 0 20px;
+    }
 .pricing-final-title, .pricing-final-subtitle {
     text-align: center;
 }
