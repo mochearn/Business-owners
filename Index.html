@@ -1393,6 +1393,27 @@ body, html {
     }
     .loading-toast { white-space: normal; width: 80%; text-align: center; }
 }
+/* Force full width – escape any parent container */
+.pricing-final {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #fff0e6;
+    padding: 80px 0;
+    box-sizing: border-box;
+}
+/* Center the inner content */
+.pricing-final .pricing-final-grid,
+.pricing-final .pricing-final-title,
+.pricing-final .pricing-final-subtitle,
+.pricing-final .pricing-final-button-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    }
 </style>
 
 <script>
