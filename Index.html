@@ -1393,6 +1393,24 @@ body, html {
     }
     .loading-toast { white-space: normal; width: 80%; text-align: center; }
 }
+    /* Fix pricing section background to edge-to-edge, no layout break */
+.pricing-final {
+    position: relative;
+    background: transparent; /* remove original background to prevent double color */
+    overflow-x: clip; /* prevents horizontal scroll from pseudo-element */
+}
+.pricing-final::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background: #fff0e6;
+    z-index: -1;
+    pointer-events: none;
+    }
 </style>
 
 <script>
