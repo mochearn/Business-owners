@@ -533,10 +533,29 @@
     min-height: 600px;
 }
 .services {
+    background: transparent; /* remove original background to avoid double */
+    position: relative;
+    overflow: hidden; /* keep this for the shapes */
+}
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
     background: #fefaf5;
-    box-shadow: 0 0 0 100vw #fefaf5;
-    clip-path: inset(0 -100vw 0 -100vw);
-    }
+    z-index: -2;
+    pointer-events: none;
+}
+/* Ensure shapes stay above the background */
+.shape {
+    z-index: 0;
+}
+.services-content {
+    z-index: 2;
+}
     
 .shape {
     position: absolute;
