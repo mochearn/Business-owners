@@ -778,185 +778,183 @@ serviceCards.forEach(card => {
     observer.observe(card);
 });
                                            </script>
-<!-- ========== PRICING SECTION (Full width background, centered content) ========== -->
-<section class="pricing-final" style="width: 100%; margin: 0; padding: 80px 0; background: #fff0e6; box-sizing: border-box;">
-    <div class="pricing-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-        <h2 class="pricing-final-title">Simple, Transparent Pricing</h2>
-        <p class="pricing-final-subtitle">Choose a plan that fits your business</p>
-        
-        <div class="pricing-final-grid" id="pricingFinalGrid">
-            <!-- Starter -->
-            <div class="pricing-final-card">
-                <div class="pricing-final-header gradient-starter-final">
-                    <div class="plan-name-wrapper">
-                        <div class="plan-name-white">Starter</div>
-                        <div class="vertical-line-custom"></div>
-                    </div>
-                </div>
-                <div class="pricing-final-body">
-                    <div class="pricing-final-price">
-                        <span class="swing-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
-                            </svg>
-                        </span>
-                        ₦25,000
-                    </div>
-                    <ul class="pricing-final-features">
-                        <li>✓ 1-page website</li>
-                        <li>✓ Mobile responsive</li>
-                        <li>✓ WhatsApp button</li>
-                        <li>✓ Free hosting</li>
-                    </ul>
-                    <a href="#" class="pricing-final-btn" data-plan="starter">Get Started →</a>
+<!-- ========== PRICING SECTION (Complete: sticky close button, no background scroll, bottom flush) ========== -->
+<section class="pricing-final">
+    <h2 class="pricing-final-title">Simple, Transparent Pricing</h2>
+    <p class="pricing-final-subtitle">Choose a plan that fits your business</p>
+    
+    <div class="pricing-final-grid" id="pricingFinalGrid">
+        <!-- Starter -->
+        <div class="pricing-final-card">
+            <div class="pricing-final-header gradient-starter-final">
+                <div class="plan-name-wrapper">
+                    <div class="plan-name-white">Starter</div>
+                    <div class="vertical-line-custom"></div>
                 </div>
             </div>
-            <!-- Essential (hidden) -->
-            <div class="pricing-final-card extra-plan-final">
-                <div class="pricing-final-header gradient-essential-final">
-                    <div class="plan-name-wrapper">
-                        <div class="plan-name-white">Essential</div>
-                        <div class="vertical-line-custom"></div>
-                    </div>
+            <div class="pricing-final-body">
+                <div class="pricing-final-price">
+                    <span class="swing-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+                        </svg>
+                    </span>
+                    ₦25,000
                 </div>
-                <div class="pricing-final-body">
-                    <div class="pricing-final-price">
-                        <span class="swing-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
-                            </svg>
-                        </span>
-                        ₦50,000
-                    </div>
-                    <ul class="pricing-final-features">
-                        <li>✓ 1-page website</li>
-                        <li>✓ Contact form</li>
-                        <li>✓ 3–5 images</li>
-                        <li>✓ 1 month support</li>
-                    </ul>
-                    <a href="#" class="pricing-final-btn" data-plan="essential">Get Started →</a>
-                </div>
-            </div>
-            <!-- Professional (hidden, popular) -->
-            <div class="pricing-final-card extra-plan-final popular-final">
-                <div class="pricing-final-header gradient-professional-final">
-                    <div class="plan-name-wrapper">
-                        <div class="plan-name-white">Professional</div>
-                        <div class="vertical-line-custom"></div>
-                    </div>
-                </div>
-                <div class="pricing-final-body">
-                    <div class="pricing-final-price">
-                        <span class="swing-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
-                            </svg>
-                        </span>
-                        ₦100,000
-                    </div>
-                    <ul class="pricing-final-features">
-                        <li>✓ 5-page website</li>
-                        <li>✓ Custom domain</li>
-                        <li>✓ Image gallery</li>
-                        <li>✓ 3 months support</li>
-                    </ul>
-                    <a href="#" class="pricing-final-btn" data-plan="professional">Get Started →</a>
-                </div>
-            </div>
-            <!-- Business (green price pill, hidden) -->
-            <div class="pricing-final-card extra-plan-final">
-                <div class="pricing-final-header gradient-business-final">
-                    <div class="plan-name-wrapper">
-                        <div class="plan-name-white">Business</div>
-                        <div class="vertical-line-custom"></div>
-                    </div>
-                </div>
-                <div class="pricing-final-body">
-                    <div class="pricing-final-price green-price">
-                        <span class="swing-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
-                            </svg>
-                        </span>
-                        ₦150,000
-                    </div>
-                    <ul class="pricing-final-features">
-                        <li>✓ Custom logo</li>
-                        <li>✓ SEO optimization</li>
-                        <li>✓ Testimonial slider</li>
-                        <li>✓ 12 months support</li>
-                    </ul>
-                    <a href="#" class="pricing-final-btn" data-plan="business">Get Started →</a>
-                </div>
-            </div>
-            <!-- E-commerce (hidden) -->
-            <div class="pricing-final-card extra-plan-final">
-                <div class="pricing-final-header gradient-ecommerce-final">
-                    <div class="plan-name-wrapper">
-                        <div class="plan-name-white">E‑commerce</div>
-                        <div class="vertical-line-custom"></div>
-                    </div>
-                </div>
-                <div class="pricing-final-body">
-                    <div class="pricing-final-price">
-                        <span class="swing-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
-                            </svg>
-                        </span>
-                        ₦250,000
-                    </div>
-                    <ul class="pricing-final-features">
-                        <li>✓ Online store (50 products)</li>
-                        <li>✓ Shopping cart</li>
-                        <li>✓ Payment links</li>
-                        <li>✓ 6 months support</li>
-                    </ul>
-                    <a href="#" class="pricing-final-btn" data-plan="ecommerce">Get Started →</a>
-                </div>
-            </div>
-            <!-- Premium (visible) -->
-            <div class="pricing-final-card">
-                <div class="pricing-final-header gradient-premium-final">
-                    <div class="plan-name-wrapper">
-                        <div class="plan-name-white">Premium</div>
-                        <div class="vertical-line-custom"></div>
-                    </div>
-                </div>
-                <div class="pricing-final-body">
-                    <div class="pricing-final-price">
-                        <span class="swing-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
-                            </svg>
-                        </span>
-                        ₦400,000+
-                    </div>
-                    <ul class="pricing-final-features">
-                        <li>✓ Fully custom design</li>
-                        <li>✓ Booking system</li>
-                        <li>✓ Live chat</li>
-                        <li>✓ 1 year priority support</li>
-                    </ul>
-                    <a href="#" class="pricing-final-btn" data-plan="premium">Get Started →</a>
-                </div>
+                <ul class="pricing-final-features">
+                    <li>✓ 1-page website</li>
+                    <li>✓ Mobile responsive</li>
+                    <li>✓ WhatsApp button</li>
+                    <li>✓ Free hosting</li>
+                </ul>
+                <a href="#" class="pricing-final-btn" data-plan="starter">Get Started →</a>
             </div>
         </div>
+        <!-- Essential (hidden) -->
+        <div class="pricing-final-card extra-plan-final">
+            <div class="pricing-final-header gradient-essential-final">
+                <div class="plan-name-wrapper">
+                    <div class="plan-name-white">Essential</div>
+                    <div class="vertical-line-custom"></div>
+                </div>
+            </div>
+            <div class="pricing-final-body">
+                <div class="pricing-final-price">
+                    <span class="swing-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+                        </svg>
+                    </span>
+                    ₦50,000
+                </div>
+                <ul class="pricing-final-features">
+                    <li>✓ 1-page website</li>
+                    <li>✓ Contact form</li>
+                    <li>✓ 3–5 images</li>
+                    <li>✓ 1 month support</li>
+                </ul>
+                <a href="#" class="pricing-final-btn" data-plan="essential">Get Started →</a>
+            </div>
+        </div>
+        <!-- Professional (hidden, popular) -->
+        <div class="pricing-final-card extra-plan-final popular-final">
+            <div class="pricing-final-header gradient-professional-final">
+                <div class="plan-name-wrapper">
+                    <div class="plan-name-white">Professional</div>
+                    <div class="vertical-line-custom"></div>
+                </div>
+            </div>
+            <div class="pricing-final-body">
+                <div class="pricing-final-price">
+                    <span class="swing-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+                        </svg>
+                    </span>
+                    ₦100,000
+                </div>
+                <ul class="pricing-final-features">
+                    <li>✓ 5-page website</li>
+                    <li>✓ Custom domain</li>
+                    <li>✓ Image gallery</li>
+                    <li>✓ 3 months support</li>
+                </ul>
+                <a href="#" class="pricing-final-btn" data-plan="professional">Get Started →</a>
+            </div>
+        </div>
+        <!-- Business (green price pill, hidden) -->
+        <div class="pricing-final-card extra-plan-final">
+            <div class="pricing-final-header gradient-business-final">
+                <div class="plan-name-wrapper">
+                    <div class="plan-name-white">Business</div>
+                    <div class="vertical-line-custom"></div>
+                </div>
+            </div>
+            <div class="pricing-final-body">
+                <div class="pricing-final-price green-price">
+                    <span class="swing-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+                        </svg>
+                    </span>
+                    ₦150,000
+                </div>
+                <ul class="pricing-final-features">
+                    <li>✓ Custom logo</li>
+                    <li>✓ SEO optimization</li>
+                    <li>✓ Testimonial slider</li>
+                    <li>✓ 12 months support</li>
+                </ul>
+                <a href="#" class="pricing-final-btn" data-plan="business">Get Started →</a>
+            </div>
+        </div>
+        <!-- E-commerce (hidden) -->
+        <div class="pricing-final-card extra-plan-final">
+            <div class="pricing-final-header gradient-ecommerce-final">
+                <div class="plan-name-wrapper">
+                    <div class="plan-name-white">E‑commerce</div>
+                    <div class="vertical-line-custom"></div>
+                </div>
+            </div>
+            <div class="pricing-final-body">
+                <div class="pricing-final-price">
+                    <span class="swing-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+                        </svg>
+                    </span>
+                    ₦250,000
+                </div>
+                <ul class="pricing-final-features">
+                    <li>✓ Online store (50 products)</li>
+                    <li>✓ Shopping cart</li>
+                    <li>✓ Payment links</li>
+                    <li>✓ 6 months support</li>
+                </ul>
+                <a href="#" class="pricing-final-btn" data-plan="ecommerce">Get Started →</a>
+            </div>
+        </div>
+        <!-- Premium (visible) -->
+        <div class="pricing-final-card">
+            <div class="pricing-final-header gradient-premium-final">
+                <div class="plan-name-wrapper">
+                    <div class="plan-name-white">Premium</div>
+                    <div class="vertical-line-custom"></div>
+                </div>
+            </div>
+            <div class="pricing-final-body">
+                <div class="pricing-final-price">
+                    <span class="swing-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l9 9c.36.36.86.59 1.41.59s1.05-.23 1.41-.59l7-7c.36-.36.59-.86.59-1.41s-.23-1.05-.59-1.41zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+                        </svg>
+                    </span>
+                    ₦400,000+
+                </div>
+                <ul class="pricing-final-features">
+                    <li>✓ Fully custom design</li>
+                    <li>✓ Booking system</li>
+                    <li>✓ Live chat</li>
+                    <li>✓ 1 year priority support</li>
+                </ul>
+                <a href="#" class="pricing-final-btn" data-plan="premium">Get Started →</a>
+            </div>
+        </div>
+    </div>
 
-        <div class="pricing-final-button-wrapper">
-            <button id="seeMoreFinalBtn" class="pricing-final-see-more">See More Plans ↓</button>
-        </div>
+    <div class="pricing-final-button-wrapper">
+        <button id="seeMoreFinalBtn" class="pricing-final-see-more">See More Plans ↓</button>
     </div>
 </section>
 
 <!-- Toast message -->
 <div id="loadingToast" class="loading-toast">A plan is already being processed. Please wait.</div>
 
-<!-- Modal -->
+<!-- Modal (restructured for sticky close button and bottom flush) -->
 <div id="premiumModal" class="premium-modal">
     <div class="premium-modal-card">
-        <button class="premium-modal-close">×</button>
-        <div class="premium-modal-header">
+        <!-- Sticky header with close button -->
+        <div class="premium-modal-sticky-header">
             <div class="premium-modal-icon">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="url(#iconGrad)"/>
@@ -969,6 +967,7 @@ serviceCards.forEach(card => {
                 </svg>
             </div>
             <h2 id="modalPlanName">Plan Name</h2>
+            <button class="premium-modal-close">&times;</button>
         </div>
         <div class="premium-modal-body" id="modalBody"></div>
         <div class="premium-modal-footer">
@@ -1000,7 +999,7 @@ serviceCards.forEach(card => {
 </div>
 
 <style>
-/* Global */
+/* ========== FULL PRICING SECTION CSS (with all fixes) ========== */
 * {
     -webkit-tap-highlight-color: transparent !important;
 }
@@ -1010,18 +1009,12 @@ body, html {
     overflow-x: hidden;
 }
 
-/* Pricing section – edge to edge background */
 .pricing-final {
     width: 100%;
     margin: 0;
-    padding: 80px 0;
+    padding: 80px 20px;
     background: #fff0e6;
     box-sizing: border-box;
-}
-.pricing-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 .pricing-final-title {
     font-size: 36px;
@@ -1039,6 +1032,8 @@ body, html {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .pricing-final-card {
     background: white;
@@ -1231,7 +1226,7 @@ body, html {
     opacity: 1;
 }
 
-/* Modal */
+/* ========== MODAL (fixed: sticky close button, bottom flush, no background scroll) ========== */
 .premium-modal {
     display: none;
     position: fixed;
@@ -1245,14 +1240,13 @@ body, html {
     align-items: center;
     justify-content: center;
 }
-    .premium-modal-card {
+.premium-modal-card {
     background: #0f172a;
     width: 90%;
     max-width: 550px;
     max-height: 90vh;
     border-radius: 36px;
     position: relative;
-    padding: 24px 22px 0px;
     border: 1px solid rgba(234, 88, 12, 0.4);
     box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(234, 88, 12, 0.2) inset;
     font-family: 'Figtree', sans-serif;
@@ -1261,57 +1255,61 @@ body, html {
     flex-direction: column;
     transform: translateY(-40px);
     transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-.premium-modal-footer {
-    margin-top: auto;
-    }
+    /* bottom padding will be handled by last element */
+}
 .premium-modal.show {
     display: flex;
 }
 .premium-modal.show .premium-modal-card {
     transform: translateY(0);
 }
-.premium-modal-close {
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    background: rgba(255,255,255,0.1);
-    border: none;
-    width: 32px;
-    height: 32px;
-    border-radius: 40px;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
+/* Sticky header with close button */
+.premium-modal-sticky-header {
+    position: sticky;
+    top: 0;
+    background: #0f172a;
+    padding: 16px 22px 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(234, 88, 12, 0.2);
+    z-index: 10;
 }
-.premium-modal-close:active {
-    transform: scale(0.9);
-    background: rgba(255,255,255,0.2);
+.premium-modal-sticky-header .premium-modal-icon {
+    flex-shrink: 0;
 }
-.premium-modal-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.premium-modal-icon svg {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 8px;
-}
-.premium-modal-header h2 {
-    font-size: 28px;
+.premium-modal-sticky-header h2 {
+    font-size: 24px;
     font-weight: 800;
     background: linear-gradient(135deg, #ffffff, #f0f0f0);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     margin: 0;
+    flex: 1;
+    text-align: center;
+}
+.premium-modal-close {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 40px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.premium-modal-close:active {
+    transform: scale(0.9);
+    background: rgba(255,255,255,0.2);
 }
 .premium-modal-body {
     color: white;
-    margin-bottom: 20px;
+    padding: 20px 22px;
     font-size: 15px;
 }
 .premium-modal-body p { margin: 12px 0; }
@@ -1329,7 +1327,10 @@ body, html {
     color: #ea580c;
     font-weight: bold;
 }
-
+.premium-modal-footer {
+    margin-top: auto;
+    padding: 0 22px 12px;
+}
 .premium-contact-btn {
     background: linear-gradient(90deg, #ea580c, #f97316);
     border: none;
@@ -1342,7 +1343,8 @@ body, html {
     min-width: 200px;
     cursor: pointer;
     transition: none;
-    margin: 12px auto 0;
+    margin: 8px auto 0;
+    display: block;
 }
 .premium-contact-btn:active { transform: scale(0.97); }
 .contact-methods-container {
@@ -1354,49 +1356,14 @@ body, html {
     max-height: 300px;
     margin-top: 12px;
 }
-.premium-modal-card {
-    background: #0f172a;
-    width: 90%;
-    max-width: 550px;
-    max-height: 90vh;
-    border-radius: 36px;
-    position: relative;
-    padding: 24px 22px 0;     /* bottom padding zero now – will be handled by inner elements */
-    border: 1px solid rgba(234, 88, 12, 0.4);
-    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(234, 88, 12, 0.2) inset;
-    font-family: 'Figtree', sans-serif;
-    overflow-y: auto;
-    display: grid;            /* change from flex to grid */
-    grid-template-rows: auto 1fr auto;  /* header, body, footer */
-    transform: translateY(-40px);
-    transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-}
-.premium-modal-header {
-    /* no changes needed */
-}
-.premium-modal-body {
-    overflow-y: auto;        /* allow body to scroll if too long */
-}
-.premium-modal-footer {
-    margin: 0;               /* remove all auto margins */
-    padding-bottom: 0;
-}
-/* Contact panel – no negative margins, natural flow */
 .contact-methods.full-width {
     background: white;
-    margin: 12px 0 0;        /* only top margin, no negative */
-    padding: 16px 22px 24px;
-    border-radius: 0 0 36px 36px;  /* round bottom corners only when panel is last element */
+    margin: 0 -22px -12px;  /* stretch left/right and pull to bottom edge */
+    padding: 16px 22px 20px;
+    border-radius: 0 0 36px 36px;
     border-top: 1px solid #e5e7eb;
-    width: calc(100% + 44px);
-    margin-left: -22px;
-    margin-right: -22px;
     box-sizing: border-box;
 }
-/* Ensure the button doesn't have extra space below */
-.premium-contact-btn {
-    margin-bottom: 0;
-    }
 .contact-method {
     display: flex;
     align-items: center;
@@ -1419,50 +1386,23 @@ body, html {
 .contact-method span { font-size: 15px; }
 
 @media (max-width: 768px) {
-    .pricing-final {
-        padding: 60px 0;
-    }
+    .pricing-final { padding: 60px 16px; }
     .pricing-final-title { font-size: 28px; }
     .pricing-final-header { height: 80px; }
     .plan-name-white { font-size: 14px; padding: 5px 12px; border-bottom-left-radius: 8px; }
     .vertical-line-custom { width: 8px; right: -8px; border-top-right-radius: 8px; }
     .pricing-final-price { font-size: 16px; top: -16px; right: 16px; padding: 4px 14px; }
-    .premium-modal-card { width: 92%; padding: 20px 18px 0px; max-height: 85vh; }
-    .premium-modal-header h2 { font-size: 24px; }
-    .contact-methods.full-width {
-        margin: 0 -18px -20px;
-        padding: 16px 18px 20px;
-        border-radius: 0 0 32px 32px;
-    }
-    .loading-toast { white-space: normal; width: 80%; text-align: center; }
+    .premium-modal-card { width: 92%; max-height: 85vh; }
+    .premium-modal-sticky-header { padding: 12px 18px; }
+    .premium-modal-sticky-header h2 { font-size: 20px; }
+    .premium-modal-body { padding: 16px 18px; }
+    .premium-modal-footer { padding: 0 18px 12px; }
+    .contact-methods.full-width { margin: 0 -18px -12px; padding: 16px 18px 20px; border-radius: 0 0 32px 32px; }
 }
-    /* Fix pricing section background to edge-to-edge, no layout break */
-.pricing-final {
-    position: relative;
-    background: transparent; /* remove original background to prevent double color */
-    overflow-x: clip; /* prevents horizontal scroll from pseudo-element */
-}
-.pricing-final::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 100%;
-    background: #fff0e6;
-    z-index: -1;
-    pointer-events: none;
-    }
-    .pricing-final {
-    background: #fff0e6;
-    box-shadow: 0 0 0 100vw #fff0e6;
-    clip-path: inset(0 -100vw 0 -100vw);
-    }
 </style>
 
 <script>
-// Fix Telegram icon (proper paper plane)
+// Fix Telegram icon (paper plane)
 const tgSvg = document.querySelector('#telegramLink svg');
 if (tgSvg) {
     tgSvg.setAttribute('viewBox', '0 0 24 24');
@@ -1478,6 +1418,7 @@ const toggleContactBtn = document.getElementById('toggleContactBtn');
 const contactContainer = document.getElementById('contactMethodsContainer');
 const toast = document.getElementById('loadingToast');
 let loadingActive = false;
+let isContactOpen = false;
 
 function showToast(msg) {
     toast.textContent = msg || "A plan is already being processed. Please wait.";
@@ -1485,32 +1426,19 @@ function showToast(msg) {
     setTimeout(() => toast.classList.remove('show'), 2000);
 }
 
-const telegramLink = document.getElementById('telegramLink');
-const emailLink = document.getElementById('emailLink');
-const callLink = document.getElementById('callLink');
-
-const planDetails = {
-    starter: { name: 'Starter Plan', price: '₦25,000', description: 'Perfect for small businesses and side hustles getting online for the first time.', features: ['1-page professional website', 'Mobile responsive design', 'WhatsApp / Call button', 'Contact form (simple)', '3–5 product/service images', 'Free hosting on GitHub Pages', '1 month basic support'], idealFor: 'Small shops, freelancers, startups' },
-    essential: { name: 'Essential Plan', price: '₦50,000', description: 'Ideal for local service providers who need a bit more than a basic page.', features: ['1-page professional website', 'WhatsApp / Call button', 'Contact form', '3–5 product images', 'Free hosting', '1 month support'], idealFor: 'Restaurants, salons, boutiques' },
-    professional: { name: 'Professional Plan', price: '₦100,000', description: 'A complete online presence with custom domain and multi‑page structure.', features: ['5-page website', 'Custom domain', 'Image gallery (up to 10 photos)', 'Google Maps location', 'Social media links', '3 months support'], idealFor: 'Growing businesses wanting a professional web address' },
-    business: { name: 'Business Plan', price: '₦150,000', description: 'Everything you need to stand out and rank on Google.', features: ['Custom logo design', 'SEO optimization', 'Product/service catalog with prices', 'Testimonial slider', 'Newsletter signup', '12 months priority support'], idealFor: 'Brands that want a complete package' },
-    ecommerce: { name: 'E‑commerce Plan', price: '₦250,000', description: 'Sell products online with a fully functional store.', features: ['Online store (up to 50 products)', 'Product categories', 'Shopping cart + checkout', 'Order management (basic)', 'Customer account option', '6 months priority support'], idealFor: 'Retail stores, vendors' },
-    premium: { name: 'Premium Plan', price: '₦400,000+', description: 'A fully custom digital experience tailored to your business.', features: ['Fully custom design', 'Unlimited pages', 'Booking / appointment system', 'Payment integration', 'Live chat', 'Advanced SEO', '1 year priority support + 2 hours free updates/month', '1 hour video call training'], idealFor: 'Established businesses, hotels, real estate, clinics' }
-};
-
 function closeModal() {
     modal.classList.remove('show');
     setTimeout(() => {
         modal.style.display = 'none';
+        document.body.style.overflow = '';
     }, 300);
-    document.body.style.overflow = '';
     contactContainer.classList.remove('show');
     toggleContactBtn.textContent = 'Contact Me to Proceed';
+    isContactOpen = false;
 }
 closeModalBtn.onclick = closeModal;
 window.onclick = function(e) { if (e.target === modal) closeModal(); };
 
-let isContactOpen = false;
 toggleContactBtn.addEventListener('click', () => {
     if (!isContactOpen) {
         contactContainer.classList.add('show');
@@ -1526,10 +1454,22 @@ toggleContactBtn.addEventListener('click', () => {
     }
 });
 
-telegramLink.href = 'https://t.me/Jbeth_1';
-emailLink.href = 'mailto:jonardbethuel@gmail.com';
-callLink.href = 'tel:+2348130641310';
+// Contact links (your real info)
+document.getElementById('telegramLink').href = 'https://t.me/Jbeth_1';
+document.getElementById('emailLink').href = 'mailto:jonardbethuel@gmail.com';
+document.getElementById('callLink').href = 'tel:+2348130641310';
 
+// Plan details
+const planDetails = {
+    starter: { name: 'Starter Plan', price: '₦25,000', description: 'Perfect for small businesses and side hustles getting online for the first time.', features: ['1-page professional website', 'Mobile responsive design', 'WhatsApp / Call button', 'Contact form (simple)', '3–5 product/service images', 'Free hosting on GitHub Pages', '1 month basic support'], idealFor: 'Small shops, freelancers, startups' },
+    essential: { name: 'Essential Plan', price: '₦50,000', description: 'Ideal for local service providers who need a bit more than a basic page.', features: ['1-page professional website', 'WhatsApp / Call button', 'Contact form', '3–5 product images', 'Free hosting', '1 month support'], idealFor: 'Restaurants, salons, boutiques' },
+    professional: { name: 'Professional Plan', price: '₦100,000', description: 'A complete online presence with custom domain and multi‑page structure.', features: ['5-page website', 'Custom domain', 'Image gallery (up to 10 photos)', 'Google Maps location', 'Social media links', '3 months support'], idealFor: 'Growing businesses wanting a professional web address' },
+    business: { name: 'Business Plan', price: '₦150,000', description: 'Everything you need to stand out and rank on Google.', features: ['Custom logo design', 'SEO optimization', 'Product/service catalog with prices', 'Testimonial slider', 'Newsletter signup', '12 months priority support'], idealFor: 'Brands that want a complete package' },
+    ecommerce: { name: 'E‑commerce Plan', price: '₦250,000', description: 'Sell products online with a fully functional store.', features: ['Online store (up to 50 products)', 'Product categories', 'Shopping cart + checkout', 'Order management (basic)', 'Customer account option', '6 months priority support'], idealFor: 'Retail stores, vendors' },
+    premium: { name: 'Premium Plan', price: '₦400,000+', description: 'A fully custom digital experience tailored to your business.', features: ['Fully custom design', 'Unlimited pages', 'Booking / appointment system', 'Payment integration', 'Live chat', 'Advanced SEO', '1 year priority support + 2 hours free updates/month', '1 hour video call training'], idealFor: 'Established businesses, hotels, real estate, clinics' }
+};
+
+// Attach loading + modal to pricing buttons
 document.querySelectorAll('.pricing-final-btn').forEach(btn => {
     btn.addEventListener('click', async (e) => {
         e.preventDefault();
@@ -1563,6 +1503,7 @@ document.querySelectorAll('.pricing-final-btn').forEach(btn => {
             modalPlanName.innerText = planNameCapitalized;
             modalBody.innerHTML = `<p>Full details for the ${planNameCapitalized} plan. Contact me to discuss your needs.</p>`;
         }
+        // Reset contact toggle
         contactContainer.classList.remove('show');
         toggleContactBtn.textContent = 'Contact Me to Proceed';
         isContactOpen = false;
@@ -1572,6 +1513,7 @@ document.querySelectorAll('.pricing-final-btn').forEach(btn => {
     });
 });
 
+// See More toggle
 const seeMoreBtn = document.getElementById('seeMoreFinalBtn');
 const extraPlans = document.querySelectorAll('.extra-plan-final');
 const grid = document.getElementById('pricingFinalGrid');
