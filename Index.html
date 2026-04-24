@@ -1354,28 +1354,35 @@ body, html {
     max-height: 300px;
     margin-top: 12px;
 }
-    /* Force contact panel to bottom without overflow cut-off */
 .premium-modal-card {
-    overflow-y: visible !important;   /* allow content to not be clipped */
-    padding-bottom: 0 !important;
-}
-.contact-methods.full-width {
-    margin: 0 -22px 0 !important;    /* no negative bottom margin */
-    border-radius: 0 0 36px 36px;
-}
-/* Ensure modal itself clips properly */
-.premium-modal {
-    overflow-y: auto;
-    }
-.contact-methods.full-width {
-    margin: 0 -22px -10px;    /* was -24px, now -4px */
-    padding: 16px 22px 24px;
-    border-radius: 0 0 36px 36px;
-   background: white;
-    border-top: 1px solid #e5e7eb;
+    background: #0f172a;
+    width: 90%;
+    max-width: 550px;
+    max-height: 90vh;
+    border-radius: 36px;
     position: relative;
-    z-index: 1;
+    padding: 24px 22px 20px;  /* consistent bottom padding */
+    border: 1px solid rgba(234, 88, 12, 0.4);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(234, 88, 12, 0.2) inset;
+    font-family: 'Figtree', sans-serif;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-40px);
+    transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
 }
+.premium-modal-footer {
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.contact-methods.full-width {
+    background: white;
+    margin: 12px -22px -20px;  /* negative bottom matches card's bottom padding */
+    padding: 16px 22px 20px;
+    border-radius: 0 0 36px 36px;
+    border-top: 1px solid #e5e7eb;
+    }
 .contact-method {
     display: flex;
     align-items: center;
