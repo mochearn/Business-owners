@@ -520,52 +520,32 @@
         </div>
     </div>
 </section>
-
 <style>
-    .services {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+/* ========== GLOBAL RESET ========== */
+* {
+    -webkit-tap-highlight-color: transparent !important;
 }
-.pricing-final {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    }
-    .services {
-    margin-bottom: -1px;
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
-.pricing-final {
-    margin-top: -1px;
-    }
+
+/* ========== SERVICES SECTION (full-width background, no gap) ========== */
 .services {
     position: relative;
     padding: 80px 0;
     background: #fefaf5;
-    margin: 40px 0;
-    border-radius: 48px;
-    font-family: 'Figtree', sans-serif;
-    overflow: hidden;
-    min-height: 600px;
-}
-.services {
-    overflow: visible; /* change from hidden */
-    background: #fefaf5;
     box-shadow: 0 0 0 100vw #fefaf5;
-    clip-path: inset(0 -100vw 0 -100vw); /* contains shapes + allows full-width background */
-    }
-.shape {
-    z-index: 0;
-}
-.services-content {
-    z-index: 2;
+    clip-path: inset(0 -100vw 0 -100vw);
+    font-family: 'Figtree', sans-serif;
+    min-height: 600px;
+    margin-bottom: 0;          /* remove bottom gap */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-    .services {
-    margin-bottom: 0;
-}
-.pricing-final {
-    margin-top: 0;
-    }
-    
+/* Moving shapes */
 .shape {
     position: absolute;
     z-index: 0;
@@ -738,24 +718,11 @@
     transition: none;
     box-shadow: 0 4px 12px rgba(234,88,12,0.3);
 }
-/* Fast blink: 0.3s total blink, 6s pause (total 6.3s cycle) */
 @keyframes fastBlink {
-    0%, 95% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    97% {
-        opacity: 0;
-        transform: scale(0.96);
-    }
-    99% {
-        opacity: 0;
-        transform: scale(0.96);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    0%, 95% { opacity: 1; transform: scale(1); }
+    97% { opacity: 0; transform: scale(0.96); }
+    99% { opacity: 0; transform: scale(0.96); }
+    100% { opacity: 1; transform: scale(1); }
 }
 .cta-button.pulse {
     animation: fastBlink 6.3s ease-in-out infinite;
@@ -764,11 +731,19 @@
     transform: scale(0.97);
     transition: transform 0.05s ease;
 }
+
+/* ========== PRICING SECTION (no gap, touches services) ========== */
+.pricing-final {
+    margin-top: 0 !important;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    /* Keep your existing pricing-final styles below (they remain unchanged) */
+}
+/* Add any other pricing-final styles you already have – they are intact */
+
 @media (max-width: 768px) {
     .services {
         padding: 60px 0;
-        margin: 20px 0;
-        border-radius: 32px;
         min-height: 500px;
     }
     .section-title {
@@ -785,7 +760,7 @@
         height: 180px;
     }
 }
-</style>
+    </style>
 
 <script>
 // Intersection Observer for scroll animations
