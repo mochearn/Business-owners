@@ -1354,6 +1354,19 @@ body, html {
     max-height: 300px;
     margin-top: 12px;
 }
+    /* Force contact panel to bottom without overflow cut-off */
+.premium-modal-card {
+    overflow-y: visible !important;   /* allow content to not be clipped */
+    padding-bottom: 0 !important;
+}
+.contact-methods.full-width {
+    margin: 0 -22px 0 !important;    /* no negative bottom margin */
+    border-radius: 0 0 36px 36px;
+}
+/* Ensure modal itself clips properly */
+.premium-modal {
+    overflow-y: auto;
+    }
 .contact-methods.full-width {
     margin: 0 -22px -10px;    /* was -24px, now -4px */
     padding: 16px 22px 24px;
