@@ -1440,7 +1440,7 @@ function closeModal() {
     modal.classList.remove('show');
     setTimeout(() => {
         modal.style.display = 'none';
-        document.body.style.overflow = '';
+      document.body.style.overflow = '';
     }, 300);
     contactContainer.classList.remove('show');
     toggleContactBtn.textContent = 'Contact Me to Proceed';
@@ -1518,6 +1518,7 @@ document.querySelectorAll('.pricing-final-btn').forEach(btn => {
         toggleContactBtn.textContent = 'Contact Me to Proceed';
         isContactOpen = false;
         modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
         setTimeout(() => modal.classList.add('show'), 10);
         document.body.style.overflow = 'hidden';
     });
