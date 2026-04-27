@@ -1543,5 +1543,406 @@ seeMoreBtn.addEventListener('click', () => {
     }
 });
     </script>
+    <!-- ========== FINAL CAROUSEL SECTION (copy everything below) ========== -->
+<style>
+html {
+    scroll-behavior: smooth !important;
+}
+body {
+    overflow-x: clip;
+    margin: 0;
+    padding: 0;
+    background: #0b031f;
+}
+.carousel-section {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #0b031f;
+    padding: 80px 0 0 0;
+    font-family: 'Figtree', sans-serif;
+    overflow-x: clip;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+.carousel-header {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 10;
+}
+.typing-container {
+    text-align: center;
+    margin-bottom: 40px;
+    z-index: 10;
+    position: relative;
+}
+.typing-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #10b981;
+    letter-spacing: 1px;
+    min-height: 65px;
+}
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.carousel-card {
+    width: 85%;
+    max-width: 360px;
+    background: rgba(20, 25, 45, 0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 48px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+    margin: 20px auto;
+    box-sizing: border-box;
+}
+.carousel-card.fade-in {
+    animation: cardFadeIn 0.6s ease forwards;
+}
+@keyframes cardFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.card-image-carousel {
+    width: 100%;
+    border-radius: 32px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+.card-image-carousel img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+.card-title-carousel {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: #fbbf24;
+}
+.card-desc-carousel {
+    font-size: 14px;
+    color: #e2e8f0;
+    line-height: 1.5;
+    margin: 0 0 16px;
+}
+.carousel-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.carousel-tags span {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 5px 12px;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fbbf24;
+}
+.carousel-link {
+    display: inline-block;
+    color: #ea580c;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+}
+.carousel-link:active {
+    transform: scale(0.95);
+    transition: transform 0.05s ease;
+}
+.carousel-footer {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+.carousel-more-link {
+    display: inline-block;
+    background: rgba(234, 88, 12, 0.9);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: none;
+}
+.carousel-more-link:active {
+    transform: scale(0.96);
+    transition: transform 0.05s ease;
+}
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 52px;
+    font-weight: 300;
+    color: #ea580c;
+    user-select: none;
+    border-radius: 50%;
+    background: transparent;
+    transition: none;
+}
+.nav-arrow-left {
+    left: -35px;
+    margin-left: 0;
+}
+.nav-arrow-right {
+    right: -35px;
+    margin-right: 0;
+}
+.nav-arrow:active {
+    background: rgba(200, 200, 200, 0.3);
+    transition: background 0.05s ease;
+}
+.nav-arrow.hidden {
+    display: none;
+}
+.nav-arrow, .carousel-card, .carousel-link, .carousel-more-link {
+    -webkit-tap-highlight-color: transparent;
+}
+.bg-shape-car {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: floatCar 14s infinite alternate ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+}
+.circle1-car {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    left: -200px;
+    background: radial-gradient(circle, #7e22ce, #ec4899);
+}
+.circle2-car {
+    width: 450px;
+    height: 450px;
+    bottom: -150px;
+    left: -100px;
+    background: radial-gradient(circle, #1e3a8a, #3b82f6);
+}
+.circle3-car {
+    width: 380px;
+    height: 380px;
+    top: 40%;
+    right: -150px;
+    background: radial-gradient(circle, #dc2626, #16a34a);
+}
+.ring1-car {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    bottom: 20%;
+    right: 5%;
+    border: 12px solid #06b6d4;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 0.5;
+    animation: floatCar 18s infinite alternate ease-in-out;
+    pointer-events: none;
+}
+.ring2-car {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    top: 15%;
+    left: 10%;
+    border: 10px solid #facc15;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 0.5;
+    animation: floatCar 20s infinite alternate ease-in-out;
+    pointer-events: none;
+}
+@keyframes floatCar {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(20px, 20px) rotate(5deg); }
+}
+.bg-shape-car, .ring1-car, .ring2-car {
+    pointer-events: none;
+    overflow: visible;
+}
+@media (max-width: 768px) {
+    .typing-text { font-size: 22px; min-height: 55px; }
+    .carousel-header { font-size: 36px; }
+    .carousel-wrapper { max-width: 460px; }
+    .carousel-card { max-width: 300px; padding: 20px; }
+    .card-image-carousel img { height: 160px; }
+    .nav-arrow { width: 40px; height: 40px; font-size: 44px; }
+    .nav-arrow-left { left: -25px; }
+    .nav-arrow-right { right: -25px; }
+    .circle1-car { width: 400px; height: 400px; top: -150px; left: -150px; }
+    .circle2-car { width: 300px; height: 300px; bottom: -100px; left: -80px; }
+    .circle3-car { width: 280px; height: 280px; right: -100px; }
+    .ring1-car { width: 180px; height: 180px; border-width: 8px; }
+    .ring2-car { width: 150px; height: 150px; border-width: 8px; }
+}
+@media (max-width: 480px) {
+    .typing-text { font-size: 18px; min-height: 48px; }
+    .carousel-header { font-size: 28px; }
+    .carousel-wrapper { max-width: 380px; }
+    .carousel-card { max-width: 260px; padding: 16px; }
+    .card-image-carousel img { height: 140px; }
+    .nav-arrow { width: 36px; height: 36px; font-size: 38px; }
+    .nav-arrow-left { left: -18px; }
+    .nav-arrow-right { right: -18px; }
+    .circle1-car { width: 280px; height: 280px; top: -100px; left: -100px; }
+    .circle2-car { width: 220px; height: 220px; bottom: -80px; left: -60px; }
+    .circle3-car { width: 200px; height: 200px; right: -80px; }
+    .ring1-car { width: 140px; height: 140px; border-width: 6px; }
+    .ring2-car { width: 120px; height: 120px; border-width: 6px; }
+}
+</style>
+
+<section class="carousel-section">
+    <div class="carousel-inner">
+        <h2 class="carousel-header">Client Work</h2>
+        <div class="typing-container">
+            <div class="typing-text" id="typingText"></div>
+        </div>
+        <div class="carousel-wrapper">
+            <div class="nav-arrow nav-arrow-left hidden" id="carouselPrev">‹</div>
+            <div class="carousel-card" id="carouselCard"></div>
+            <div class="nav-arrow nav-arrow-right" id="carouselNext">›</div>
+        </div>
+    </div>
+    <div class="bg-shape-car circle1-car"></div>
+    <div class="bg-shape-car circle2-car"></div>
+    <div class="bg-shape-car circle3-car"></div>
+    <div class="ring1-car"></div>
+    <div class="ring2-car"></div>
+</section>
+
+<script>
+const sentences = [
+    "Building modern websites for local businesses",
+    "Responsive designs that work on all devices",
+    "Affordable pricing for every budget",
+    "Let's bring your idea to life"
+];
+let sentenceIndex = 0, charIndex = 0, isDeleting = false;
+const typingElement = document.getElementById('typingText');
+const typingSpeed = 80, deleteSpeed = 40, pauseDelay = 1500;
+
+function typeEffect() {
+    const currentSentence = sentences[sentenceIndex];
+    if (isDeleting) {
+        typingElement.textContent = currentSentence.substring(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+            isDeleting = false;
+            sentenceIndex = (sentenceIndex + 1) % sentences.length;
+            setTimeout(typeEffect, 300);
+            return;
+        }
+        setTimeout(typeEffect, deleteSpeed);
+    } else {
+        typingElement.textContent = currentSentence.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === currentSentence.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, pauseDelay);
+            return;
+        }
+        setTimeout(typeEffect, typingSpeed);
+    }
+}
+typeEffect();
+
+const carouselData = [
+    { image: "https://images.unsplash.com/photo-1520333789090-1afc82db536a?q=80&w=1200&fit=crop", title: "Benson's Barber Shop", description: "Modern one‑page site with WhatsApp booking and contact form. Increased customer calls by 40%.", tags: ["HTML/CSS", "Responsive", "WhatsApp API"], projectLink: "#", moreLink: "#" },
+    { image: "https://images.unsplash.com/photo-1544650039-22886fbb4323?q=80&w=1200&fit=crop", title: "Mama Jo's Kitchen", description: "E‑commerce store with online ordering and Paystack integration.", tags: ["E‑commerce", "Paystack", "Mobile-first"], projectLink: "#", moreLink: "#" },
+    { image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&fit=crop", title: "Paul's Photography", description: "Portfolio with gallery, lightbox, and SEO optimisation.", tags: ["Gallery", "SEO", "Lightbox"], projectLink: "#", moreLink: "#" },
+    { image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&fit=crop", title: "Elite Law Chambers", description: "Corporate website with client portal and case management system.", tags: ["Corporate", "Client Portal", "Secure"], projectLink: "#", moreLink: "#" },
+    { image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1200&fit=crop", title: "AutoFix Pro", description: "Garage booking system with appointment scheduling and payment integration.", tags: ["Booking", "Payment", "Mobile"], projectLink: "#", moreLink: "#" }
+];
+
+let currentIndex = 0;
+const cardContainer = document.getElementById('carouselCard');
+const prevBtn = document.getElementById('carouselPrev');
+const nextBtn = document.getElementById('carouselNext');
+let isAnimating = false;
+
+function updateCard(index, skipAnimation = false) {
+    if (isAnimating) return;
+    const data = carouselData[index];
+    if (!data) return;
+    const newHTML = `
+        <div class="card-image-carousel"><img src="${data.image}" alt="${data.title}"></div>
+        <div class="card-content-carousel">
+            <h3 class="card-title-carousel">${data.title}</h3>
+            <p class="card-desc-carousel">${data.description}</p>
+            <div class="carousel-tags">${data.tags.map(tag => `<span>${tag}</span>`).join('')}</div>
+            <a href="${data.projectLink}" class="carousel-link">View Project →</a>
+        </div>
+        <div class="carousel-footer"><a href="${data.moreLink}" class="carousel-more-link">Details</a></div>
+    `;
+    if (skipAnimation) {
+        cardContainer.innerHTML = newHTML;
+        cardContainer.classList.remove('fade-in');
+        prevBtn.classList.toggle('hidden', index === 0);
+        nextBtn.classList.toggle('hidden', index === carouselData.length - 1);
+        return;
+    }
+    isAnimating = true;
+    cardContainer.classList.remove('fade-in');
+    void cardContainer.offsetWidth;
+    cardContainer.innerHTML = newHTML;
+    cardContainer.classList.add('fade-in');
+    setTimeout(() => {
+        cardContainer.classList.remove('fade-in');
+        isAnimating = false;
+    }, 600);
+    prevBtn.classList.toggle('hidden', index === 0);
+    nextBtn.classList.toggle('hidden', index === carouselData.length - 1);
+}
+
+prevBtn.addEventListener('click', () => { if (currentIndex > 0 && !isAnimating) { currentIndex--; updateCard(currentIndex); } });
+nextBtn.addEventListener('click', () => { if (currentIndex < carouselData.length - 1 && !isAnimating) { currentIndex++; updateCard(currentIndex); } });
+updateCard(0, true);
+    </script>
 </body>
     </html>
