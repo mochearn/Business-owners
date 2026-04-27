@@ -1549,9 +1549,10 @@ html {
     scroll-behavior: smooth !important;
 }
 body {
+    overflow-x: clip;
     margin: 0;
     padding: 0;
-    background: #0b031f; /* optional, to match */
+    background: #0b031f;  /* optional, only if you want fallback */
 }
 .carousel-section {
     position: relative;
@@ -1564,6 +1565,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
 .carousel-inner {
     width: 100%;
